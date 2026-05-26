@@ -1,0 +1,1244 @@
+/* =========================
+RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#faf7f2;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* =========================
+TITULOS
+========================= */
+
+h1,h2,h3{
+    font-family:'Playfair Display',serif;
+}
+
+/* =========================
+HEADER
+========================= */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:#111;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+}
+
+.logo h1{
+
+    color:#d4af37;
+
+    font-size:3rem;
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.1rem;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+
+    color:#d4af37;
+}
+
+/* =========================
+HERO VIDEO
+========================= */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    color:white;
+}
+
+.video-fondo{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+}
+
+.overlay{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.55);
+
+    z-index:-1;
+}
+
+.hero-content{
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    animation:aparecer 1.5s ease;
+}
+
+.hero h2{
+
+    font-size:5rem;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.hero p{
+
+    font-size:1.4rem;
+
+    margin-bottom:35px;
+
+    max-width:700px;
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+BOTONES
+========================= */
+
+.hero-botones{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:16px 40px;
+
+    background:#d4af37;
+
+    color:black;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.4s;
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    background:#f1c84c;
+}
+
+.btn-video{
+
+    background:transparent;
+
+    border:2px solid #d4af37;
+
+    color:white;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    transition:0.4s;
+}
+
+.btn-video:hover{
+
+    background:#d4af37;
+
+    color:black;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+NOSOTROS
+========================= */
+
+.nosotros{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:80px;
+
+    padding:100px 10%;
+
+    flex-wrap:wrap;
+}
+
+.nosotros-texto{
+
+    flex:1;
+
+    min-width:300px;
+
+    max-width:550px;
+}
+
+.nosotros-texto h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+    color:#111;
+}
+
+.nosotros-texto p{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+    color:#555;
+}
+
+.nosotros-img{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:300px;
+}
+
+.nosotros-img img{
+
+    width:100%;
+
+    max-width:500px;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+    transition:0.4s;
+}
+
+.nosotros-img img:hover{
+
+    transform:scale(1.03);
+}
+
+/* =========================
+MENU
+========================= */
+
+.menu{
+
+    padding:100px 10%;
+}
+
+.titulo-menu{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.titulo-menu h2{
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+}
+
+.titulo-menu p{
+
+    font-size:1.2rem;
+
+    color:#666;
+}
+
+.categoria-titulo{
+
+    margin:60px 0 30px;
+
+    color:#b22222;
+
+    font-size:2rem;
+}
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+.menu-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+    transition:0.4s;
+}
+
+.menu-card:hover{
+
+    transform:translateY(-10px);
+}
+
+.menu-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+}
+
+.menu-info{
+
+    padding:20px;
+}
+
+.menu-info h3{
+
+    margin-bottom:10px;
+}
+
+.menu-info span{
+
+    color:#b22222;
+
+    font-weight:bold;
+
+    font-size:1.1rem;
+}
+
+/* =========================
+BOTONES GENERALES
+========================= */
+
+button,
+.btn,
+.btn-reserva{
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+button:hover,
+.btn:hover,
+.btn-reserva:hover{
+
+    transform:translateY(-5px)
+    scale(1.03);
+}
+
+/* =========================
+BOTONES RESERVA
+========================= */
+
+.contenedor-reserva{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:70px;
+
+    flex-wrap:wrap;
+}
+
+.btn-reserva{
+
+    background:#b22222;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 6px 20px rgba(178,34,34,0.3);
+}
+
+#btnReservas{
+
+    background:#111;
+}
+
+#btnReservas:hover{
+
+    background:#000;
+}
+
+/* =========================
+MODAL
+========================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:3000;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.8);
+
+    overflow:auto;
+}
+
+.modal-contenido{
+
+    background:white;
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:40px auto;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    animation:animar 0.4s ease;
+}
+
+@keyframes animar{
+
+    from{
+
+        transform:translateY(-50px);
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+    }
+}
+
+.cerrar{
+
+    float:right;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+.modal-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+}
+/* =========================
+FORMULARIO RESERVA PREMIUM
+========================= */
+
+.formulario-modal{
+
+    background: #fff;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
+
+    border: 1px solid rgba(212,175,55,0.25);
+}
+
+/* TITULO */
+
+.formulario-modal h2{
+
+    font-size: 2rem;
+
+    color: #b22222;
+
+    margin-bottom: 30px;
+
+    font-family:'Playfair Display',serif;
+
+    letter-spacing: 1px;
+
+    position: relative;
+}
+
+/* LINEA DECORATIVA */
+
+.formulario-modal h2::after{
+
+    content: '';
+
+    display: block;
+
+    width: 120px;
+
+    height: 2px;
+
+    margin-top: 12px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #d4af37,
+        transparent
+    );
+}
+
+/* FORMULARIO */
+
+.formulario-modal form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+/* INPUTS */
+
+.formulario-modal input,
+.formulario-modal textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    border:1px solid #ddd;
+
+    background:#faf7f2;
+
+    font-size:1rem;
+
+    font-family:'Montserrat',sans-serif;
+
+    transition:0.35s;
+
+    outline:none;
+}
+
+/* HOVER */
+
+.formulario-modal input:hover,
+.formulario-modal textarea:hover{
+
+    border:1px solid #d4af37;
+}
+
+/* FOCUS */
+
+.formulario-modal input:focus,
+.formulario-modal textarea:focus{
+
+    border:1px solid #b22222;
+
+    background:white;
+
+    box-shadow:
+    0 0 0 4px rgba(178,34,34,0.08);
+}
+
+/* PLACEHOLDER */
+
+.formulario-modal input::placeholder,
+.formulario-modal textarea::placeholder{
+
+    color:#888;
+}
+
+/* TEXTAREA */
+
+.formulario-modal textarea{
+
+    resize:none;
+}
+
+/* =========================
+BOTON GUARDAR RESERVA
+========================= */
+
+.formulario-modal button{
+
+    margin-top:10px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #b22222,
+        #8b0000
+    );
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    box-shadow:
+    0 8px 22px rgba(178,34,34,0.28);
+}
+
+/* HOVER BOTON */
+
+.formulario-modal button:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.01);
+
+    background:
+    linear-gradient(
+        135deg,
+        #c62828,
+        #7a0000
+    );
+
+    box-shadow:
+    0 12px 28px rgba(178,34,34,0.4);
+}
+
+/* CLICK */
+
+.formulario-modal button:active{
+
+    transform:scale(0.98);
+}
+/* =========================
+BOTONES CATEGORÍAS PREMIUM
+========================= */
+
+.btn-categoria{
+
+    width: 55%;
+
+    margin: 12px auto 0 auto;
+
+    display: block;
+
+    padding: 13px 18px;
+
+    border: 1px solid rgba(212,175,55,0.35);
+
+    border-radius: 14px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #111,
+        #1b1b1b
+    );
+
+    color: #f5e6b3;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,0.35);
+}
+.titulo-productos{
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #b22222;
+
+    font-family:'Playfair Display',serif;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+    position: relative;
+}
+.titulo-productos::after{
+
+    content: '';
+
+    display: block;
+
+    width: 140px;
+
+    height: 2px;
+
+    margin: 12px auto 0 auto;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+/* EFECTO HOVER */
+
+.btn-categoria:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.01);
+
+    background:
+    linear-gradient(
+        145deg,
+        #1b1b1b,
+        #000
+    );
+
+    color: #fff3c4;
+
+    border: 1px solid rgba(212,175,55,0.7);
+
+    box-shadow:
+    0 10px 24px rgba(212,175,55,0.18);
+}
+
+/* EFECTO CLICK */
+
+.btn-categoria:active{
+
+    transform: scale(0.98);
+}
+/* =========================
+CONTENEDOR PRODUCTOS
+========================= */
+
+.contenedor-productos{
+
+    margin-top:12px;
+
+    padding:15px;
+
+    background:white;
+
+    border-radius:16px;
+
+    animation:aparecerCategoria 0.35s ease;
+}
+
+@keyframes aparecerCategoria{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+PRODUCTOS PEDIDO
+========================= */
+
+.producto-pedido{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#faf7f2;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    transition:0.3s;
+}
+
+.producto-pedido:hover{
+
+    background:#f1ece4;
+}
+
+.controles{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.controles button{
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#b22222;
+
+    color:white;
+
+    font-size:1rem;
+}
+
+.cantidad{
+
+    font-weight:bold;
+
+    font-size:1.1rem;
+}
+#totalPedido{
+
+    margin-top: 30px;
+
+    text-align: left;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #b22222;
+
+    font-family:'Playfair Display',serif;
+
+    position: relative;
+
+    text-transform: uppercase;
+
+    display: inline-block;
+}
+
+/* LINEA DECORATIVA */
+
+#totalPedido::after{
+
+    content: '';
+
+    display: block;
+
+    width: 100%;
+
+    height: 1.5px;
+
+    margin-top: 10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+/* =========================
+RESERVAS
+========================= */
+
+.reservas-guardadas{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:40px auto;
+}
+
+#contenedorReservas{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.card-reserva{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.1);
+
+    text-align:center;
+
+    transition:0.3s;
+}
+
+.card-reserva:hover{
+
+    transform:translateY(-5px);
+}
+
+.card-reserva h4{
+
+    color:#b22222;
+
+    margin-bottom:10px;
+}
+/* =========================
+MODAL RESERVAS
+========================= */
+
+.modal-reservas{
+
+    max-width:1000px;
+}
+
+/* TITULO */
+
+.titulo-reservas{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    color:#111;
+
+    font-size:2.5rem;
+}
+
+/* GRID RESERVAS */
+
+.grid-reservas{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+/* CARD RESERVA */
+
+.card-reserva{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.12);
+
+    transition:0.35s;
+
+    border:2px solid transparent;
+
+    background:
+    linear-gradient(white,white) padding-box,
+    linear-gradient(135deg,#b22222,#ff4d4d)
+    border-box;
+}
+
+.card-reserva:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.03);
+
+    box-shadow:
+    0 14px 35px rgba(178,34,34,0.25);
+}
+
+/* NOMBRE */
+
+.card-reserva h3{
+
+    color:#b22222;
+
+    margin-bottom:15px;
+
+    font-size:1.4rem;
+}
+
+/* FECHA */
+
+.card-reserva p{
+
+    color:#555;
+
+    font-size:1.1rem;
+
+    font-weight:500;
+}
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    padding:70px 10%;
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:20px;
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .hero h2{
+
+        font-size:3rem;
+    }
+
+    .hero p{
+
+        font-size:1.1rem;
+    }
+
+    .hero-botones{
+
+        flex-direction:column;
+    }
+
+    .nosotros{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .modal-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .contenedor-reserva{
+
+        flex-direction:column;
+    }
+
+}
