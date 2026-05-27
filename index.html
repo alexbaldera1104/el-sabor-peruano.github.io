@@ -1,463 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--título, css, google fonts, tipografías, íconos-->
     <title>El Sabor Peruano</title>
-
-    <!-- CSS -->
-
     <link rel="stylesheet"
           href="css/styles.css">
-
-    <!-- GOOGLE FONTS -->
-
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
-
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
           crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
           rel="stylesheet">
-
-    <!-- ICONOS -->
-
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
-
-<!-- HEADER -->
-
-<header>
-
-    <div class="logo">
-
-        <h1>El Sabor Peruano</h1>
-
-    </div>
-
-    <nav>
-
-        <ul>
-
-            <li><a href="#inicio">Inicio</a></li>
-
-            <li><a href="#nosotros">Nosotros</a></li>
-
-            <li><a href="#menu">Menú</a></li>
-
-            <li><a href="#contacto">Contacto</a></li>
-
-        </ul>
-
-    </nav>
-
-</header>
-
-<!-- HERO VIDEO -->
-
-<section class="hero"
-         id="inicio">
-
-    <!-- VIDEO DE FONDO -->
-
-    <video autoplay
-           muted
-           loop
-           playsinline
+    <!-- encabezado -->
+    <header>
+        <div class="logo">
+            <h1>El Sabor Peruano</h1>
+        </div>
+        <nav>
+          <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#menu">Menú</a></li>
+             <li><a href="#contacto">Contacto</a></li>
+          </ul>
+     </nav>
+    </header>
+    <section class="hero" id="inicio">
+        <!-- video de fondo -->
+        <video autoplay muted loop playsinline
            class="video-fondo">
-
         <source src="video/video.mp4"
                 type="video/mp4">
-
-    </video>
-
-    <!-- CAPA OSCURA -->
-
-    <div class="overlay"></div>
-
-    <!-- CONTENIDO -->
-
-    <div class="hero-content">
-
-        <h2>
-            La mejor experiencia gastronómica peruana
-        </h2>
-
-        <p>
-            Cocina gourmet peruana con sabores únicos
-            y atención premium.
-        </p>
-
-        <div class="hero-botones">
-
-            <a href="#menu"
-               class="btn">
-
-                Ver Menú
-
-            </a>
-
-            <button class="btn-video"
+        </video>
+        <div class="overlay"></div>
+        <!-- texto principal con botones ver menú y explorar -->
+        <div class="hero-content">
+            <h2> La mejor experiencia gastronómica peruana </h2>
+            <p> Cocina gourmet peruana con sabores únicos y atención premium. </p>
+                <div class="hero-botones">
+                    <a href="#menu" class="btn"> Ver Menú </a>
+                    <button class="btn-video"
                     onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
-
-                Explorar
-
-            </button>
-
+                    Explorar
+                    </button>
+                 </div>
         </div>
-
-    </div>
-
-</section>
-
-<!-- NOSOTROS -->
-
-<section class="nosotros"
-         id="nosotros">
-
-    <div class="nosotros-texto">
-
-        <h2>Sobre Nosotros</h2>
-
-        <p>
-            El Sabor Peruano combina tradición,
-            elegancia y modernidad en cada plato.
-        </p>
-
-        <p>
-            Nuestra misión es ofrecer una experiencia
-            gastronómica inolvidable.
-        </p>
-
-    </div>
-
-    <div class="nosotros-img">
-
-        <img src="img/Restaurante.jpg">
-
-    </div>
-
-</section>
-
-<!-- MENU -->
-
-<section class="menu"
-         id="menu">
-
-    <div class="titulo-menu">
-
-        <h2>Nuestro Menú</h2>
-
-        <p>
-            Gastronomía peruana premium
-        </p>
-
-    </div>
-
-    <!-- ENTRADAS -->
-
-    <h2 class="categoria-titulo">
-        Entradas
-    </h2>
-
+    </section>
+    <!-- nosotros -->
+    <section class="nosotros" id="nosotros">
+        <div class="nosotros-texto">
+            <h2>Sobre Nosotros</h2>
+            <p> El Sabor Peruano combina tradición, elegancia y modernidad en cada plato. </p>
+            <p> Nuestra misión es ofrecer una experiencia gastronómica inolvidable. </p>
+        </div>
+        <div class="nosotros-img"> <img src="img/Restaurante.jpg"></div>
+    </section>
+    <!-- menu -->
+    <section class="menu" id="menu">
+        <div class="titulo-menu">
+          <h2> Nuestro Menú </h2>
+          <p> Gastronomía peruana premium </p>
+        </div>
+        <h2 class="categoria-titulo"> Entradas </h2>
     <div class="menu-grid">
-
         <div class="menu-card"><img src="img/CausaLimeña.jpeg"><div class="menu-info"><h3>Causa Limeña</h3><span>S/18</span></div></div>
-
         <div class="menu-card"><img src="img/PapaalaHuancaina.jpeg"><div class="menu-info"><h3>Papa a la Huancaína</h3><span>S/16</span></div></div>
-
         <div class="menu-card"><img src="img/Ocopa.jpg"><div class="menu-info"><h3>Ocopa</h3><span>S/17</span></div></div>
-
         <div class="menu-card"><img src="img/Anticuchos.jpeg"><div class="menu-info"><h3>Anticuchos</h3><span>S/20</span></div></div>
-
         <div class="menu-card"><img src="img/Tiradito.jpeg"><div class="menu-info"><h3>Tiradito</h3><span>S/25</span></div></div>
-
         <div class="menu-card"><img src="img/Tequeños.jpeg"><div class="menu-info"><h3>Tequeños</h3><span>S/15</span></div></div>
-
         <div class="menu-card"><img src="img/Tamal.jpeg"><div class="menu-info"><h3>Tamal </h3><span>S/14</span></div></div>
-
         <div class="menu-card"><img src="img/YuquitasFritas.jpeg"><div class="menu-info"><h3>Yuquitas Fritas</h3><span>S/13</span></div></div>
-
         <div class="menu-card"><img src="img/ChoritosalaChalaca.jpeg"><div class="menu-info"><h3>Choritos a la Chalaca</h3><span>S/24</span></div></div>
-
         <div class="menu-card"><img src="img/Ensalada.jpeg"><div class="menu-info"><h3>Ensalada </h3><span>S/12</span></div></div>
-
     </div>
-
-    <!-- PLATOS -->
-
-    <h2 class="categoria-titulo">
-        Platos Principales
-    </h2>
-
+    <h2 class="categoria-titulo"> Platos Principales </h2>
     <div class="menu-grid">
-
         <div class="menu-card"><img src="img/LomoSaltado.jpeg"><div class="menu-info"><h3>Lomo Saltado</h3><span>S/42</span></div></div>
-
         <div class="menu-card"><img src="img/AjideGallina.jpeg"><div class="menu-info"><h3>Ají de Gallina</h3><span>S/38</span></div></div>
-
         <div class="menu-card"><img src="img/ArrozconPollo.jpeg"><div class="menu-info"><h3>Arroz con Pollo</h3><span>S/35</span></div></div>
-
         <div class="menu-card"><img src="img/SecodeCarne.jpeg"><div class="menu-info"><h3>Seco de Carne</h3><span>S/39</span></div></div>
-
         <div class="menu-card"><img src="img/ChaufadeMariscos.jpg"><div class="menu-info"><h3>Chaufa de Mariscos</h3><span>S/34</span></div></div>
-
         <div class="menu-card"><img src="img/CevicheMixto.jpeg"><div class="menu-info"><h3>Ceviche Mixto</h3><span>S/45</span></div></div>
-
         <div class="menu-card"><img src="img/Parihuela.jpeg"><div class="menu-info"><h3>Parihuela</h3><span>S/48</span></div></div>
-
         <div class="menu-card"><img src="img/RocotoRellenoArequipeño.jpeg"><div class="menu-info"><h3>Rocoto Relleno Arequipeño</h3><span>S/40</span></div></div>
-
         <div class="menu-card"><img src="img/CabritoNorteño.jpeg"><div class="menu-info"><h3>Cabrito Norteño</h3><span>S/46</span></div></div>
-
         <div class="menu-card"><img src="img/TallarinesVerdes.jpeg"><div class="menu-info"><h3>Tallarines Verdes</h3><span>S/37</span></div></div>
-
     </div>
-
-    <!-- BEBIDAS -->
-
-    <h2 class="categoria-titulo">
-        Bebidas
-    </h2>
-
+    <h2 class="categoria-titulo"> Bebidas </h2>
     <div class="menu-grid">
-
         <div class="menu-card"><img src="img/PiscoSour.jpg"><div class="menu-info"><h3>Pisco Sour</h3><span>S/22</span></div></div>
-
         <div class="menu-card"><img src="img/ChichaMorada.jpeg"><div class="menu-info"><h3>Chicha Morada</h3><span>S/12</span></div></div>
-
         <div class="menu-card"><img src="img/MaracuyaFrozen.png"><div class="menu-info"><h3>Maracuyá Frozen</h3><span>S/16</span></div></div>
-
         <div class="menu-card"><img src="img/LimonadaFrozen.jpeg"><div class="menu-info"><h3>Limonada Frozen</h3><span>S/10</span></div></div>
-
         <div class="menu-card"><img src="img/Mojito.jpeg"><div class="menu-info"><h3>Mojito</h3><span>S/24</span></div></div>
-
         <div class="menu-card"><img src="img/Emoliente.jpeg"><div class="menu-info"><h3>Emoliente</h3><span>S/9</span></div></div>
-
         <div class="menu-card"><img src="img/Cappuccino.jpeg"><div class="menu-info"><h3>Cappuccino</h3><span>S/11</span></div></div>
-
         <div class="menu-card"><img src="img/MatedeCoca.jpg"><div class="menu-info"><h3>Mate de Coca</h3><span>S/8</span></div></div>
-
         <div class="menu-card"><img src="img/JugoTropical.jpg"><div class="menu-info"><h3>Jugo Tropical</h3><span>S/14</span></div></div>
-
         <div class="menu-card"><img src="img/InkaKola.jpeg"><div class="menu-info"><h3>Inca Kola</h3><span>S/7</span></div></div>
-
     </div>
-
-    <!-- POSTRES -->
-
-    <h2 class="categoria-titulo">
-        Postres
-    </h2>
-
+    <h2 class="categoria-titulo"> Postres </h2>
     <div class="menu-grid">
-
         <div class="menu-card"><img src="img/SuspiroLimeño.jpeg"><div class="menu-info"><h3>Suspiro Limeño</h3><span>S/18</span></div></div>
-
         <div class="menu-card"><img src="img/MazamorraMorada.jpeg"><div class="menu-info"><h3>Mazamorra Morada</h3><span>S/15</span></div></div>
-
         <div class="menu-card"><img src="img/Picarones.jpeg"><div class="menu-info"><h3>Picarones</h3><span>S/17</span></div></div>
-
         <div class="menu-card"><img src="img/ArrozconLeche.jpeg"><div class="menu-info"><h3>Arroz con Leche</h3><span>S/14</span></div></div>
-
         <div class="menu-card"><img src="img/KingKong.jpeg"><div class="menu-info"><h3>King Kong</h3><span>S/20</span></div></div>
-
         <div class="menu-card"><img src="img/Alfajores.jpeg"><div class="menu-info"><h3>Alfajores</h3><span>S/12</span></div></div>
-
         <div class="menu-card"><img src="img/CheesecakeLucuma.jpeg"><div class="menu-info"><h3>Cheesecake de Lúcuma</h3><span>S/19</span></div></div>
-
         <div class="menu-card"><img src="img/TresLeches.jpeg"><div class="menu-info"><h3>Tres Leches</h3><span>S/16</span></div></div>
-
         <div class="menu-card"><img src="img/FlanPlus.jpeg"><div class="menu-info"><h3>Flan Plus</h3><span>S/13</span></div></div>
-
         <div class="menu-card"><img src="img/HeladoArtesanal.jpeg"><div class="menu-info"><h3>Helado Artesanal</h3><span>S/15</span></div></div>
-
     </div>
-
-</section>
-
-<!-- BOTON RESERVA -->
-<!-- BOTONES -->
-
-<div class="contenedor-reserva">
-
-    <button id="abrirModal"
-            class="btn-reserva">
-
-        Reservar Cita
-
-    </button>
-
-    <button id="btnReservas"
-            class="btn-reserva">
-
-        Citas Reservadas
-
-    </button>
-
-</div>
-
-<!-- LISTA DE RESERVAS -->
-<!-- MODAL RESERVAS -->
-
-<div class="modal"
-     id="modalReservas">
-
-    <div class="modal-contenido modal-reservas">
-
-        <span class="cerrar"
-              id="cerrarReservas">
-
-            &times;
-
-        </span>
-
-        <h2 class="titulo-reservas">
-
-            Citas Reservadas
-
-        </h2>
-
-        <div id="contenedorReservas"
-             class="grid-reservas">
-
+    </section>
+    <!-- reservas -->
+    <div class="contenedor-reserva">
+        <button id="abrirModal" class="btn-reserva"> Reservar Cita </button>
+        <button id="btnReservas" class="btn-reserva"> Citas Reservadas </button>
+    </div>
+    <div class="modal" id="modalReservas">
+        <div class="modal-contenido modal-reservas">
+            <span class="cerrar" id="cerrarReservas">&times;</span>
+            <h2 class="titulo-reservas">Citas Reservadas</h2>
+            <div id="contenedorReservas" class="grid-reservas"></div>
         </div>
-
     </div>
-
-</div>
-<!-- MODAL -->
-
-<div class="modal"
-     id="modalReserva">
-
-    <div class="modal-contenido">
-
-        <span class="cerrar">&times;</span>
-
-        <div class="modal-grid">
-
-            <!-- FORM -->
-
-            <div class="formulario-modal">
-
-                <h2>Reserva</h2>
-
-                <form id="formReserva">
-
+    <div class="modal"
+         id="modalReserva">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <div class="modal-grid">
+                <!-- formulario -->
+                <div class="formulario-modal">
+                    <h2>Reserva</h2>
+                    <form id="formReserva">
                     <input type="text"
                            id="nombre"
                            placeholder="Nombre y Apellidos"
                            required>
-
                     <input type="text"
                            id="dni"
                            placeholder="DNI"
                            required>
-
                     <input type="tel"
                            id="celular"
                            placeholder="Celular"
                            required>
-
                     <input type="email"
                            id="correo"
                            placeholder="Correo"
                            required>
-
                     <input type="date"
                            id="fecha"
                            required>
-
                     <input type="time"
                            id="hora"
                            required>
-
                     <input type="number"
                            id="personas"
                            placeholder="Cantidad de personas"
                            required>
-
                     <textarea id="mensaje"
                               rows="4"
                               placeholder="Mensaje adicional"></textarea>
-
                     <button type="submit">
                         Guardar Reserva
                     </button>
-
                 </form>
-
-            </div>
-
-            <!-- PRODUCTOS -->
-
+                </div>
             <div class="pedido-modal">
-
-                <h2 class="titulo-productos">
-
-                    Selecciona Productos
-
-                </h2>
-
+                <h2 class="titulo-productos">Selecciona Productos</h2>
                 <div id="listaPedidos"></div>
-
-                <h3 id="totalPedido">
-                    Total: S/ 0
-                </h3>
-
+                <h3 id="totalPedido">Total: S/ 0</h3>
             </div>
-
+            </div>
         </div>
-
     </div>
-
-</div>
-
-<!-- FOOTER -->
-
-<footer id="contacto">
-
-    <div class="footer-grid">
-
-        <div>
-
-            <h3>El Sabor Peruano</h3>
-
-            <p>
-                Restaurante gourmet peruano.
-            </p>
-
+    <!-- footer -->
+    <footer id="contacto">
+        <div class="footer-grid">
+            <div>
+                <h3>El Sabor Peruano</h3>
+                <p>Restaurante gourmet peruano.</p>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>+51 924 109 269 </p>
+                <p>contacto@elsaborperuano.com</p>
+                <p>Chiclayo - Perú</p>
+            </div>
         </div>
-
-        <div>
-
-            <h3>Contacto</h3>
-
-            <p>+51 987 654 321 </p>
-
-            <p>contacto@elsaborperuano.com</p>
-
-            <p>Chiclayo - Perú</p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-<script src="js/script.js"></script>
-
+    </footer>
+    <script src="js/script.js"></script>
 </body>
-
 </html>
