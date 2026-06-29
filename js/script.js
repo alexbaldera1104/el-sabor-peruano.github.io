@@ -55,10 +55,8 @@ const nombresCategoria = {
     bebidas: 'Bebidas',
     postres: 'Postres'
 };
-
 let carrito = [];
 let cuponAplicado = false;
-
 const menuCategorias = document.getElementById('menuCategorias');
 const listaPedidos = document.getElementById('listaPedidos');
 const totalPedido = document.getElementById('totalPedido');
@@ -67,11 +65,9 @@ const contenedorReservas = document.getElementById('contenedorReservas');
 const navPrincipal = document.getElementById('navPrincipal');
 const menuToggle = document.getElementById('menuToggle');
 const fechaReserva = document.getElementById('fecha');
-
 function formatoPrecio(precio) {
     return `S/ ${precio}`;
 }
-
 function renderMenu() {
     menuCategorias.innerHTML = Object.keys(productos).map((categoria) => `
         <article class="categoria-bloque" data-categoria="${categoria}">
@@ -90,7 +86,6 @@ function renderMenu() {
         </article>
     `).join('');
 }
-
 function renderProductosReserva() {
     listaPedidos.innerHTML = Object.keys(productos).map((categoria) => `
         <div class="categoria">
@@ -116,26 +111,22 @@ function renderProductosReserva() {
         </div>
     `).join('');
 }
-
 function toggleMenu() {
     const abierto = navPrincipal.classList.toggle('abierto');
     menuToggle.setAttribute('aria-expanded', abierto);
     menuToggle.innerHTML = abierto ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
 }
-
 function cerrarMenu() {
     navPrincipal.classList.remove('abierto');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
 }
-
 function filtrarMenu(categoriaSeleccionada) {
     document.querySelectorAll('.categoria-bloque').forEach((bloque) => {
         const coincide = categoriaSeleccionada === 'todos' || bloque.dataset.categoria === categoriaSeleccionada;
         bloque.classList.toggle('oculto', !coincide);
     });
 }
-
 function abrirModal(idModal) {
     const modal = document.getElementById(idModal);
     if (!modal) {
@@ -145,7 +136,6 @@ function abrirModal(idModal) {
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-abierto');
 }
-
 function cerrarModal(idModal) {
     const modal = document.getElementById(idModal);
     if (!modal) {
@@ -153,25 +143,21 @@ function cerrarModal(idModal) {
     }
     modal.classList.remove('activo');
     modal.setAttribute('aria-hidden', 'true');
-
     const quedaModalAbierto = document.querySelector('.modal.activo');
     if (!quedaModalAbierto) {
         document.body.classList.remove('modal-abierto');
     }
 }
-
 function abrirModalReservas() {
     mostrarReservas();
     abrirModal('modalReservas');
 }
-
 function toggleCategoria(categoria) {
     const contenedor = document.getElementById(`pedido-${categoria}`);
     if (contenedor) {
         contenedor.classList.toggle('activo');
     }
 }
-
 function aumentar(categoria, index) {
     const producto = productos[categoria][index];
     const existe = carrito.find((item) => item.nombre === producto.nombre);
@@ -185,10 +171,8 @@ function aumentar(categoria, index) {
             cantidad: 1
         });
     }
-
     actualizarPedido();
 }
-
 function disminuir(categoria, index) {
     const producto = productos[categoria][index];
     const existe = carrito.find((item) => item.nombre === producto.nombre);
@@ -196,21 +180,16 @@ function disminuir(categoria, index) {
     if (!existe) {
         return;
     }
-
     existe.cantidad--;
-
     if (existe.cantidad <= 0) {
         carrito = carrito.filter((item) => item.nombre !== producto.nombre);
     }
-
     actualizarPedido();
 }
-
 function calcularTotal() {
     const subtotal = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0);
     return cuponAplicado ? Math.round(subtotal * 0.9) : subtotal;
 }
-
 function actualizarPedido() {
     Object.keys(productos).forEach((categoria) => {
         productos[categoria].forEach((producto, index) => {
@@ -222,38 +201,30 @@ function actualizarPedido() {
             }
         });
     });
-
     const textoCupon = cuponAplicado ? ' con cupón' : '';
     totalPedido.textContent = `Total${textoCupon}: ${formatoPrecio(calcularTotal())}`;
 }
-
 function aplicarCupon() {
     const confirmarCupon = confirm('¿Deseas aplicar el cupón SABOR10 a tu pedido?');
-
     if (!confirmarCupon) {
         return;
     }
-
     cuponAplicado = true;
     actualizarPedido();
     alert('Cupón aplicado correctamente.');
 }
-
 function limpiarFormularioReserva() {
     formulario.reset();
     carrito = [];
     cuponAplicado = false;
     actualizarPedido();
 }
-
 function guardarReserva(evento) {
     evento.preventDefault();
-
     const confirmar = confirm('¿Deseas guardar esta reserva?');
     if (!confirmar) {
         return;
     }
-
     const reserva = {
         nombre: document.getElementById('nombre').value.trim(),
         dni: document.getElementById('dni').value.trim(),
@@ -267,30 +238,24 @@ function guardarReserva(evento) {
         total: calcularTotal(),
         cuponAplicado
     };
-
     const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
     reservas.push(reserva);
     localStorage.setItem('reservas', JSON.stringify(reservas));
-
     alert('Reserva guardada correctamente.');
     limpiarFormularioReserva();
     mostrarReservas();
     cerrarModal('modalReserva');
 }
-
 function mostrarReservas() {
     const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
-
     if (reservas.length === 0) {
         contenedorReservas.innerHTML = '<p class="mensaje-vacio">Aún no hay citas registradas.</p>';
         return;
     }
-
     contenedorReservas.innerHTML = reservas.map((reserva, index) => {
         const pedidos = reserva.pedidos.length > 0
             ? `<ul>${reserva.pedidos.map((item) => `<li>${item.cantidad} x ${item.nombre}</li>`).join('')}</ul>`
             : '<p>Sin productos seleccionados.</p>';
-
         return `
             <article class="card-reserva">
                 <h3>${index + 1}. ${reserva.nombre}</h3>
@@ -305,7 +270,6 @@ function mostrarReservas() {
 }
 function vaciarReservas() {
     const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
-
     if (reservas.length === 0) {
         alert('No hay reservas para eliminar.');
         return;
